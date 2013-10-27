@@ -1,0 +1,28 @@
+<robot name="MosaicBot">
+   <link name="base">
+               <inertial>
+                <mass value="20" />
+                <origin xyz="0 0 0.5" />
+                <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+                         iyy="0.0001" iyz="0.0" 
+                         izz="0.0001" />
+				</inertial>
+     </link>
+   <link name="roueGauche" />
+   <link name="roueDroite" />
+   
+  <joint name="TransmissionRoueGauche" type="continuous">
+    <parent link="base"/>
+	<child link ="roueGauche">
+	<origin xyz="0.266 -0.268 0.5" rpy="0 0 0" />
+	<axis xyz="0 1 0" />
+ </joint>
+ 
+  <joint name="TransmissionRoueDroite" type="continuous">
+    <parent link="base"/>
+	<child link ="roueDroite">
+	<origin xyz="-0.266 -0.268 0.5" rpy="0 0 0" />
+	<axis xyz="0 -1 0" />
+ </joint>
+ 
+</robot>
