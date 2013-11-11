@@ -1,0 +1,101 @@
+Errata type: Code  Page No: 29
+
+<package>
+
+  <description brief="short description">
+
+    long description, 
+
+  </description>
+
+  <author>Aaron Martinez, Enrique Fernandez</author>
+
+  <license>BSD</license>
+
+ 
+
+  <url>http://example.com/</url>
+
+  <depend package="roscpp"/>
+
+  <depend package="common"/>
+
+  <depend package="otherPackage"/>
+
+  <versioncontrol type="svn" url="https://urlofpackage/trunk"/>
+
+  <export>
+
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lros"/>
+
+</package>
+
+ 
+
+should be:
+
+ 
+
+<package>
+
+  <description brief="short description">
+
+    long description, 
+
+  </description>
+
+  <author>Aaron Martinez, Enrique Fernandez</author>
+
+  <license>BSD</license>
+
+ 
+
+  <url>http://example.com/</url>
+
+  <depend package="roscpp"/>
+
+  <depend package="common"/>
+
+  <depend package="otherPackage"/>
+
+  <versioncontrol type="svn" url="https://urlofpackage/trunk"/>
+
+  <export>
+
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lros"/>
+
+  </export>
+
+</package>
+
+ 
+
+Errata type: Code  Page No: 41
+
+$ echo "export ROS_PACKAGE_PATH"~/dev/rosbook:${ROS_PACKAGE_PATH}" >>  
+~/.bashrc
+should be:
+$ echo "export ROS_PACKAGE_PATH=~/dev/rosbook:${ROS_PACKAGE_PATH}" >>  
+~/.bashrc
+
+Errata type: Code  Page No.: 50
+
+$ rosservice call 3 3 0.2 "new_turtle"
+
+should be:
+
+$ rosservice call /spawn 3 3 0.2 "new_turtle"
+
+Errata type: Technical  Page No: 47
+
+$ rosnode info /turtlesim
+
+ 
+
+Node [/teleop_turtle]
+
+should be:
+
+$ rosnode info /turtlesim
+
+Node [/turtlesim]
